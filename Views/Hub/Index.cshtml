@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Hub";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <form method="post" action="/Hub/Send">
+            <div class="form-group">
+                <label for="groupName">頻道</label>
+                <select class="form-control" id="groupName" name="groupName">
+                    <option value="ChannelA">Channel A</option>
+                    <option value="ChannelB">Channel B</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">訊息</label>
+                <input type="text" class="form-control" id="message" name="message">
+            </div>
+            <button type="submit" class="btn btn-primary">傳送</button>
+        </form>
+    </div>
+</div>

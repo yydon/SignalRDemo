@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div>@Html.ActionLink("Server", "Index", "Hub", null, new { target = "_blank" })</div>
+        <div>@Html.ActionLink("Channel A", "ChannelA", "Client", null, new { target = "_blank" })</div>
+        <div>@Html.ActionLink("Channel B", "ChannelB", "Client", null, new { target = "_blank" })</div>
+    </div>
+</div>

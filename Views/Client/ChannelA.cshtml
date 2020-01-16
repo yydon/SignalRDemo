@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Channel A";
+}
+
+<div class="row">
+    <div class="col-md-12 h3">Channel A</div>
+    <div class="col-md-12">
+        message:<span id="messages"></span>
+    </div>
+</div>
+
+@section scripts
+{
+    <script src="~/Scripts/jquery.signalR-2.4.1.min.js"></script>
+    <script src="~/signalr/hubs"></script>
+    <script>
+        $(function () {
+            var channelHub = $.connection.channelHub;
+
+            channelHub.client.showmessage = function (message) {
+                $('#messages').text(message);
+            };
+
+            $.connection.hub.start()
+                .done(function () {
+                    channelHub.server.addGroup("ChannelA");
+                });
+        });
+    </script>
+}
